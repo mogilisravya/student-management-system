@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sms_db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  flyway:
+    enabled: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+# Keep same upload directories locally
+app:
+  upload:
+    dir: uploads
